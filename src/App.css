@@ -1,0 +1,30 @@
+.video{
+    position: absolute;
+    z-index: -10;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100vh;
+    /* height: 100vh; */
+}
+.wrapper_video{
+    margin: auto;
+  position: relative;
+  min-width: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  min-height: 100vh;
+  overflow: hidden;
+  /* background-image: url('./img/istockphoto-1227347059-640_adpp_is.mp4'); */
+}
+/* .myTakesDamage{
+  background-color: #CE0000;
+  animation: damageMonstr 0.5s linear  forwards;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  }
+  
+  @keyframes damageMonstr{
+      100%{ opacity: 0;}
+  } */

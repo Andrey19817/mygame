@@ -1,0 +1,22 @@
+.result{
+    color: #024A4F;
+}
+.container_modal_death{
+    background-color: #F6C79B;
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.button_container_death{
+    color: wheat;
+    border-radius: 5px;
+    background-image: url('https://i.gifer.com/3z6p.gif');
+    background-position: center;
+    box-shadow: 0 0 10px 2px black;
+}
+.button_container_death:hover{
+    cursor: pointer;
+    transform: scale(0.97);
+}

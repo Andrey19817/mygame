@@ -1,0 +1,462 @@
+.wrapper{
+    margin: auto;
+    margin-top: 30px;
+    /* outline: 1px solid red; */
+    max-width: 800px;
+    height: 850px;
+    padding-top: 20px;
+    position: relative;
+    box-shadow: 0 0 10px 2px rgb(192, 13, 13);
+    background-image: url('https://thumbs.dreamstime.com/b/%D0%BF%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D0%B5%D0%BB%D1%8C%D0%B5-%D0%B7%D0%B0%D0%BC%D0%BA%D0%B0-%D1%81-%D0%BB%D1%83%D1%87-%D1%81%D0%B2%D0%B5%D1%82%D0%BE%D0%BC-93845874.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container_monstr_display{
+    position: relative;
+    width: 70%;
+    margin: auto;
+    padding-top: 10px;
+    height: 500px;
+}
+.monstr{
+    border: 3px solid;
+    border-image: url('https://acegif.com/wp-content/gifs/fire-13.gif') 27 ;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px rgb(192, 13, 13);
+    width: 66%;
+    height: 450px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.monsterTakesDamage{
+background-color: #CE0000;
+animation: damageMonstr 0.5s linear  forwards;
+width: 350px;
+    height: 450px;
+}
+.myTakesDamage{
+background-color: #CE0000;
+animation: damageMonstr 0.5s linear  forwards;
+position: absolute;
+width: 2000px;
+height: 1500px;
+transform: translate(-30%,-20%);
+}
+
+@keyframes damageMonstr{
+    100%{ opacity: 0;}
+}
+
+.container_characteristics{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px 20px 0px 20px;
+}
+.container_my_characteristics ,.container_monstr_characteristics{
+    text-align: center;
+    /* color: red; */
+    width: 75px;
+}
+.monstrDice{
+    margin-top: 200px;
+    font-size: 30px;
+    text-align: center;
+}
+.myDice{
+    width: 17px;
+    text-align: center;
+    margin-top: 22px;
+    margin-left: 25px;
+    font-size: 20px;
+    border-radius: 50%;
+    color: white;
+    background-color: #00007E;
+    position: absolute;
+}
+.armor_monstr{
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 300px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+.container_my_xp{
+    margin-top: 20px;
+    margin:20px auto;
+    width: 30%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.container_button{
+height: 10px;
+}
+.xp{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    background-color: red;
+}
+
+.containerXp{
+    margin-bottom: 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.container_monstr_xp{
+    margin: auto;
+    margin-bottom: 15px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    width: 70%;
+    height: 20px;
+}
+.message{
+    width: 300px;
+    position: absolute;
+    text-align: center;
+    margin-left: 32%;
+    margin-top: -40%;
+    font-size: 40px;
+}
+.message_death{
+    color: red;
+}
+.message_victory{
+    color: gold;
+}
+.message_hit{
+    color: hsl(44, 93%, 46%);
+}
+.message_miss{
+    color: greenyellow;
+}
+.displayDice{
+    outline: 1px solid red;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    margin-left:85%;
+    margin-top: -20%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nameMonstr{
+    font-size: 30px;
+    text-align: center;
+    color: red;
+}
+.myName{
+    font-size: 30px;
+    text-align: center;
+}
+.containerPers{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+.myArmor{
+    font-size: 30px;
+    text-align: center;
+    margin-left: 30px;
+}
+.container_button_victory{
+    text-align: center;
+    margin-top: 50px;
+}
+/* =================================================================== */
+.dice_20{
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 50%;
+    background-image: url(../img/kisspng-d20-system-dungeons-dragons-d6-system-dice-clip-twenty-cliparts-5a8aeb1e382cf3.6428323415190535982301.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    position: relative;
+}
+.dice_20:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 2px green;
+}
+.dice_20_play{
+    animation: dice 1s linear  forwards;
+    z-index: 10;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+@keyframes dice{
+0%{margin-top: 0px; transform: rotate(0deg);}
+30%{margin-top: -500px; margin-left: -350px; transform: rotate(450deg);}
+50%{margin-top: -700px; margin-left: 200px; transform: rotate(0deg)}
+80%{margin-top: -500px; margin-left: -350px; transform: rotate(450deg)}
+100%{margin-top: -600px; margin-left: -0px; transform: rotate(0deg)}
+}
+.containr_button_atack20{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    position: relative;
+}
+/* ================================================================ */
+.dice_6{
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgb(143, 131, 131);
+    background-color: #00007E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px black;
+}
+.dice_6:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 2px green;
+}
+.dice_6_play{
+    animation: dice 1s linear  forwards;
+    z-index: 10;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+.container_button_atack6{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    position: relative;
+}
+/* ============================================================ */
+.damageMonstr{
+    position: absolute;
+    width: 30px;
+    margin-left: 47%;
+    color: red;
+    font-size: 30px;
+}
+.damageMy{
+    position: absolute;
+    width: 30px;
+    margin-left: 30%;
+    color: red;
+    font-size: 40px;
+}
+/* ============================================================ */
+.container_atack_monstr_d20{
+    /* border: 3px solid;
+    border-image: url('https://acegif.com/wp-content/gifs/fire-13.gif') 27 ; */
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    background-position: center; 
+    position: absolute;
+    margin-left: 70%;
+    background-image: url(../img/Без\ названия.png);
+    display: flex;
+    justify-content: center;
+}
+.diceMonstr{
+     width: 23px;
+     text-align: center;
+     margin-top: 21px;
+     /* margin-left: 22px; */
+     font-size: 24px;
+     border-radius: 50%;
+     color: white;
+     background-color: #CE0000;
+     position: absolute;
+}
+
+@keyframes diceMonstr{
+    0%{margin-top: 0px; transform: rotate(0deg);}
+    30%{margin-top: 300px; margin-left: 220px; transform: rotate(450deg);}
+    50%{margin-top: 450px; margin-left: 400px; transform: rotate(0deg)}
+    80%{margin-top: 320px; margin-left: 500px; transform: rotate(450deg)}
+    100%{margin-top: 270px; margin-left: 400px; transform: rotate(0deg)}
+    }
+    .dice_20_monstr_play{
+        animation: diceMonstr 1s linear  forwards;
+        z-index: 10;
+        transform: translate(-50%,-50%);
+    }
+    .container_atack_monstr_d6{
+    position: absolute;
+    margin-left: 80%;
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgb(143, 131, 131);
+    background-color: #CE0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 2px black;
+    }
+    @keyframes diceMonstr_6{
+        0%{margin-top: 0px; transform: rotate(0deg);}
+        30%{margin-top: 350px; margin-left: 120px; transform: rotate(450deg);}
+        50%{margin-top: 350px; margin-left: 300px; transform: rotate(0deg)}
+        80%{margin-top: 320px; margin-left: 500px; transform: rotate(450deg)}
+        100%{margin-top: 270px; margin-left: 300px; transform: rotate(0deg)}
+        }
+    .dice_6_monstr_play{
+        animation: diceMonstr_6 1s linear  forwards;
+        z-index: 10;
+        transform: translate(-50%,-50%);
+        /* background-image: url(../audio/04526.mp3); */
+    }
+    .treatment{
+        position: relative;
+        width: 70px;
+        height: 70px;
+        margin-left:10px;
+        background-image: url('https://papik.pro/uploads/posts/2021-11/thumbs/1636188289_5-papik-pro-p-meditsinskii-logotip-foto-5.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        box-shadow: 0 0 10px 2px rgb(56, 192, 51);
+        /* animation: damageMonstr 0.5s linear  forwards; */
+    }
+    .treatment:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+        outline: 2px solid white;
+        /* box-shadow: 0 0 10px 2px green; */
+
+    }
+    .treatment_play{
+    background-color: rgb(56, 192, 51);
+    animation: treatment 1s linear  forwards;
+    position: absolute;
+    width: 2000px;
+    height: 1500px;
+    transform: translate(-30%,-20%);
+    }
+    @keyframes treatment{
+        100%{opacity: 0;}
+    }
+    @media(max-width:620px){
+        .wrapper{
+            margin-top: 50px;
+            height: 500px;
+        }
+        .dice_20,.container_atack_monstr_d20{
+            width: 40px;
+            height: 40px;
+        }
+        .myDice{
+        width: 27%;
+        text-align: center;
+        margin-top: 32%;
+        margin-left: 35%;
+        font-size: 11px;
+        border-radius: 50%;
+        color: white;
+        background-color: #00007E;
+        position: absolute;
+        }
+        .diceMonstr{
+         background-color: #CE0000;
+         width: 35%;
+         text-align: center;
+         margin-top: 30%;
+         margin-left: -4%;
+         font-size: 11px;
+         border-radius: 50%;
+         color: white;
+         position: absolute;
+        }
+        .container_atack_monstr_d6,.dice_6,.treatment{
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+        .monstr{
+            height: 65%;
+            width: 150px;
+            /* overflow: hidden; */
+            /* background-size: 100%; */
+        }
+        .message{
+            font-size: 20px;
+            margin-left:8% ;
+            margin-top: -50%;
+        }
+        .container_monstr_display{
+            height: 300px;
+        }
+        .myName,.nameMonstr{
+            font-size: 20px;
+        }
+        .container_atack_monstr_d20{
+            margin-left: 60%;
+        }
+        .container_atack_monstr_d6{
+            margin-left: 70%;
+
+        }
+        p{
+            font-size: 10px;
+        }
+        h2{
+            font-size: 15px;
+        }
+        @keyframes diceMonstr{
+            0%{margin-top: 0px; transform: rotate(0deg);}
+            30%{margin-top: 100px; margin-left: 150px; transform: rotate(450deg);}
+            50%{margin-top: 170px; margin-left: 270px; transform: rotate(0deg)}
+            80%{margin-top: 220px; margin-left: 100px; transform: rotate(450deg)}
+            100%{margin-top: 150px; margin-left: 100px; transform: rotate(0deg)}
+            }
+            @keyframes diceMonstr_6{
+                0%{margin-top: 0px; transform: rotate(0deg);}
+                30%{margin-top: 150px; margin-left: 20px; transform: rotate(450deg);}
+                50%{margin-top: 250px; margin-left: 100px; transform: rotate(0deg)}
+                80%{margin-top: 120px; margin-left: 100px; transform: rotate(450deg)}
+                100%{margin-top: 170px; margin-left: 200px; transform: rotate(0deg)}
+                }
+                .damageMonstr{
+                position: absolute;
+                width: 20px;
+                margin-left: 47%;
+                color: red;
+                font-size: 20px;
+                }
+                .damageMy{
+                    position: absolute;
+                    width: 0px;
+                    margin-left: 30%;
+                    color: red;
+                    font-size: 20px;
+                }
+                .monsterTakesDamage{
+                    background-color: #CE0000;
+                    animation: damageMonstr 0.5s linear  forwards;
+                    width: 100%;
+                        height: 100%;
+                    }
+    }

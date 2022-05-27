@@ -1,0 +1,42 @@
+.wrapper_victory{
+    margin:auto ;
+    padding-top: 300px;
+    outline: 1px solid rgb(56, 192, 51);
+   text-align: center;
+   margin-top: 30px;
+   box-shadow: 0 0 10px 2px rgb(56, 192, 51);
+   height: 550px;
+   width: 800px;
+   background-image: url('https://images.wallpaperscraft.ru/image/single/peshchera_kamen_kamennyj_170742_1280x720.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+}
+.dispalay_victory{
+    color: white;
+    /* outline: 1px solid red; */
+    font-size: 40px;
+}
+.container_button_victory_modal{
+    margin-top: 30px;
+}
+.button_victory{
+    color: wheat;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgb(56, 192, 51);
+    border-radius: 5px;
+    background-image: url('https://i.gifer.com/3z6p.gif');
+    background-position: center;
+}
+.button_victory:hover{
+    cursor: pointer;
+    transform: scale(0.98);
+}
+@media(max-width:620px){
+    .wrapper_victory{
+        width: 100%;
+        padding-top: 200px;
+        margin-top: 0px;
+    }
+}
