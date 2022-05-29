@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef,memo } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './Battle.css'
 import { Atack6 } from '../Atack6/Atack6'
 import { getMyXp, getXp } from '../GetXp/GetXp'
-import { Container_modal_victory } from "../Container_modal_victory/Container_modal_victory";
+import { ContainerModalVictory} from "../Container_modal_victory/ContainerModalVictory";
 import { ContainerModalDeath } from '../ContainerModalDeath/ContainerModalDeath'
 import {useSelector} from 'react-redux'
 import {ContainerCharacteristics} from '../ContainerCharacteristics/ContainerCharacteristics'
@@ -164,7 +164,7 @@ function Battle(props) {
     audioRef_batle_fon.current.volume = 0.2
   }, [])
 
-  {
+  
     useEffect(() => {
       if (monstrXp.length === 0) {
         seisBtn_20(false)
@@ -177,7 +177,7 @@ function Battle(props) {
         setChange(false)
       }
     }, [monstrXp, myXp, monstrArea])
-  }
+  
 
   return (
     <div className="wrapper">
@@ -244,7 +244,7 @@ function Battle(props) {
         </div> : null}
       </div> : null}
          
-      {victory ? <Container_modal_victory next_level={next_level} /> : null}
+      {victory ? <ContainerModalVictory next_level={next_level} /> : null}
       {death ? <ContainerModalDeath  replay={props.replay} /> : null}
       <Cheats setMyXp = {setMyXp} armorMy={armorMy}/>
     </div>

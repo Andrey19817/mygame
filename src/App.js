@@ -1,9 +1,9 @@
-import React, { useState, useRef,useEffect } from "react";
+import React, { useState } from "react";
 import Battle from './battle/Battle';
 import { ContainerModal } from './ContainerModal/ContainerModal'
 import './App.css'
 import { ModalVictory } from "./ModalVictory/ModalVictory";
-import {useSelector} from 'react-redux' 
+ 
 
 
 

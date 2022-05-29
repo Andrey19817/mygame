@@ -1,10 +1,10 @@
-import React,{useState,useRef} from "react";
-import './Container_modal_victory.css'
+import React from "react";
+import './ContainerModalVictory.css'
 import { useDispatch } from "react-redux";
 import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
 
 
-export function Container_modal_victory(props){
+export function ContainerModalVictory(props){
     const dispatch = useDispatch()
     const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
     const audioClick = new Audio(audioClickAdress)
