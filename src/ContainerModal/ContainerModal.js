@@ -1,35 +1,35 @@
 
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import './ContainerModal.css'
 import { Avatar } from "./Avatar/Avatar";
 import { HeroWindow } from "./HeroWindow/HeroWindow";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
-
-
+import { nanoid } from "nanoid"
 
 
 
 export function ContainerModal(props) {
   const dispatch = useDispatch()
-  const pers = useSelector(({pers})=>pers)
+  const pers = useSelector(({ pers }) => pers)
   const [value, setValue] = useState('')
-  
+
+  console.log('ContainerModal');
 
   const getName = (value) => {
-    dispatch({type:ContainerActivType.getName,payload:value})
+    dispatch({ type: ContainerActivType.getName, payload: value })
   }
 
-  const soundFon = require('../audio/kirill-pokrovsky-original-sin (1).mp3')
-  const audioRef = useRef()
-  const [isAudioPlay, setIsAudioPlay] = useState(false)
+  // const soundFon = require('../audio/kirill-pokrovsky-original-sin (1).mp3')
+  // const audioRef = useRef()
+  // const [isAudioPlay, setIsAudioPlay] = useState(false)
 
   const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
   const audioClick = new Audio(audioClickAdress)
-  useEffect(() => {
-    audioRef.current.volume = 0.2
-  }, [])
+  // useEffect(() => {
+  //   audioRef.current.volume = 0.2
+  // }, [])
 
   const return_image_selection = () => {
     setShow_image_selection(true)
@@ -43,19 +43,12 @@ export function ContainerModal(props) {
   return (
 
     <div className="wrapper_modal">
-      <audio src={soundFon} ref={audioRef} autoPlay loop ></audio>
       <button onClick={() => {
-
-        if (isAudioPlay) {
-          audioRef.current.pause()
-        } else {
-          audioRef.current.play()
-        }
-        setIsAudioPlay(isAudioPlay => !isAudioPlay)
+        props.audioFon()
       }}>music</button>
       {pers.bestPers.level ? <div className="best_pers">Лучший игрок - {pers.bestPers.name} Уровень - {pers.bestPers.level}</div> : null}
       {show_input ? <div className="container_input">
-        
+
         <input type="text" value={value} placeholder='Имя героя' onChange={event => setValue(event.target.value)} />
         <button className="getName" onClick={() => {
           if (value !== '') {
@@ -63,7 +56,10 @@ export function ContainerModal(props) {
             setShow_image_selection(true)
             setShow_input(false)
             // let key = 'c48Uu72vB5HOjYdeCrJcg82EkOmH9MDg'// персональный ключ API
-            fetch('https://api.giphy.com/v1/gifs/trending?api_key=c48Uu72vB5HOjYdeCrJcg82EkOmH9MDg&limit=30&rating=g')
+            // fetch('https://api.giphy.com/v1/gifs/search?api_key=c48Uu72vB5HOjYdeCrJcg82EkOmH9MDg&q=Lord+of+the+Rings&limit=30&offset=0&rating=g&lang=en')
+
+            fetch('https://api.giphy.com/v1/gifs/search?api_key=c48Uu72vB5HOjYdeCrJcg82EkOmH9MDg&q=dark+souls&limit=30&offset=0&rating=g&lang=en')
+            // fetch('https://api.giphy.com/v1/gifs/trending?api_key=c48Uu72vB5HOjYdeCrJcg82EkOmH9MDg&limit=30&rating=r')
               .then((response) => response.json())
               .then(({ data }) => setGetPicture(data))
           }
@@ -77,9 +73,8 @@ export function ContainerModal(props) {
           setShow_image_selection(false)
           props.setShowAvatar(event.target)
           audioClick.play()
-
         }}>
-          {getPicture.map(elem => <Avatar key={elem.id} avatar={elem.images.original.url} />)}
+          {getPicture.map(elem => <Avatar key={nanoid(10)} avatar={elem.images.original.url} />)}
         </div>
       </div> : null}
       {!show_image_selection && !show_input ? <HeroWindow value={value} avatar={props.showAvatar} return_image_selection={return_image_selection} /> : null}
@@ -88,8 +83,11 @@ export function ContainerModal(props) {
           if (value !== '') {
             getName(`${value}`)
             audioClick.play()
-            audioRef.current.pause()
+            props.audioRef.current.load()
+            props.audioRef.current.pause()
             props.play()
+            dispatch({ type: ContainerActivType.getAvatar, payload: props.showAvatar })
+
           }
         }}>Начать</button> : null}
       </div>

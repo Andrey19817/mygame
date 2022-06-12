@@ -8,7 +8,8 @@
     /* height: 100vh; */
 }
 .wrapper_video{
-    margin: auto;
+  /* padding-top: 30px; */
+  margin: auto;
   position: relative;
   min-width: 100%;
   overflow-y: hidden;

@@ -8,6 +8,10 @@
 .hero_window{
     margin-right: 40px;
 }
+.hero_window_avatar:hover{
+    cursor: pointer;
+    transform: scale(2.05)
+}
 @media(max-width:620px){
     .heroWindow_p{
         font-size: 30px;

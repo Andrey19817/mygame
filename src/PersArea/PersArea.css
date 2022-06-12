@@ -1,0 +1,35 @@
+.persArea_p{
+    margin-left: 10px;
+    color: wheat;
+    position: relative;
+    z-index: 1;
+}
+.container_persArea{
+    width: 70%;
+    max-height: 400px;
+    overflow: auto;
+    /* outline: 1px solid red; */
+    margin: auto;
+    display: inline-block;
+    justify-content: center;
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none;
+    background-color: rgba(0,0,0, 0.5);
+    position: relative;
+    z-index: 0;
+}
+.container_persArea::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
+}
+.show_persArea{
+    position: absolute;
+    width: 50px;
+    height: 20px;
+    background-color: green;
+    background-image: url('https://i.gifer.com/3z6p.gif');
+    background-position: center;
+    box-shadow: 0 0 10px 2px green;
+    border-radius: 3px;
+
+}

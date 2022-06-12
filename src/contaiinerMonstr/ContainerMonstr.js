@@ -20,57 +20,57 @@ export const monstrArea = [
       id:2,
       name:"Чёрная вдова",
       xp:8,
-    strong:10,
+    strong:1,
     armor:5,
     img:'https://avatarko.ru/img/kartinka/22/fantastika_pauk_21159.jpg'
   },
-  //   {id:3,
-  //     name:'Восставший',
-  //     xp:10,
-  //   strong:2,
-  //   armor:5,
-  //   img:'https://pm1.narvii.com/6984/71599ed1d4169ed45f3d6b6e6b4502afc2e56da6r1-1000-954v2_hq.jpg'
-  // },
-  // {
-  //   id:4,
-  //   name:'Мимик',
-  //   xp:8,
-  //   strong:3,
-  //   armor:5,
-  //   img:'https://games.mail.ru/hotbox/content_files/news/2020/08/20/5321df2eeb1b4f54a95579395282959e.jpg'
-  // },
-  // {
-  //     id:5,
-  //     name:'Банши',
-  //     xp:12,
-  //     strong:3,
-  //     armor:5,
-  //     img:'https://krot.info/uploads/posts/2022-01/1642551921_4-krot-info-p-prizrak-art-9.jpg'
-  //   },
-  //     {
-  //   id:6,
-  //   name:'Нагайна',
-  //   xp:14,
-  //   strong:3,
-  //   armor:5,
-  //   img:'https://cdna.artstation.com/p/assets/images/images/003/342/494/large/edikt-art-ed.jpg?1472644423'
-  // },
-  //    {
-  //       id:7,
-  //       name:'Болотный кошмар',
-  //       xp:15,
-  //       strong:4,
-  //       armor:7,
-  //       img:'https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/cthulu-feature-header.jpg'
-  //     },
-  // {
-  //   id:8,
-  //   name:'Смауг',
-  //   xp:20,
-  //   strong:5,
-  //   armor:10,
-  //   img:'http://sites.nd.edu/manuscript-studies/files/2019/02/Fahey-Smaug-and-Bilbo-from-Jacksons-The-Desolation-of-Smaug-2013-1024x683.jpg'
-  // },
+    {id:3,
+      name:'Восставший',
+      xp:10,
+    strong:2,
+    armor:5,
+    img:'https://pm1.narvii.com/6984/71599ed1d4169ed45f3d6b6e6b4502afc2e56da6r1-1000-954v2_hq.jpg'
+  },
+  {
+    id:4,
+    name:'Мимик',
+    xp:8,
+    strong:3,
+    armor:5,
+    img:'https://games.mail.ru/hotbox/content_files/news/2020/08/20/5321df2eeb1b4f54a95579395282959e.jpg'
+  },
+  {
+      id:5,
+      name:'Банши',
+      xp:12,
+      strong:3,
+      armor:5,
+      img:'https://krot.info/uploads/posts/2022-01/1642551921_4-krot-info-p-prizrak-art-9.jpg'
+    },
+      {
+    id:6,
+    name:'Нагайна',
+    xp:14,
+    strong:3,
+    armor:5,
+    img:'https://cdna.artstation.com/p/assets/images/images/003/342/494/large/edikt-art-ed.jpg?1472644423'
+  },
+     {
+        id:7,
+        name:'Болотный кошмар',
+        xp:15,
+        strong:4,
+        armor:7,
+        img:'https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/10/cthulu-feature-header.jpg'
+      },
+  {
+    id:8,
+    name:'Смауг',
+    xp:20,
+    strong:5,
+    armor:10,
+    img:'http://sites.nd.edu/manuscript-studies/files/2019/02/Fahey-Smaug-and-Bilbo-from-Jacksons-The-Desolation-of-Smaug-2013-1024x683.jpg'
+  },
 //   {id:9,
 //     name:'Крыса',
 //     xp:6,

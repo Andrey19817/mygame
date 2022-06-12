@@ -1,0 +1,48 @@
+.container_cheats{
+    top: 0;
+    position: absolute;
+    /* padding-bottom: 1px; */
+    width: 100%;
+    /* margin-left: -68%; */
+    /* margin-top: -5vh; */
+    height: 30vh;
+    background-color: rgba(0,0,0, 0.5);
+    z-index: 10;
+}
+.cheats_input{
+    position: absolute;
+    /* outline: 1px solid red; */
+    margin: auto;
+    width: 100%;
+    bottom: 0;
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+.cheats_input:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+.container_cheats_play{
+    /* margin-top: -600px; */
+    /* background-color: rgb(56, 192, 51); */
+    /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOnkHAWOhSlF1n0Ar8FWkYjhqe4eEVuoF9XgUuXSCt31z4XJNtX3nwW7PBxBNWcAEuBCk&usqp=CAU'); */
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5XXo8ATm0RImYNjL2It5ieSg1yijS4e4oA&usqp=CAU');
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-size: 100%;
+    background-position: center;
+    opacity: 0.6;
+    animation: treatment 1s linear  forwards;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    /* width: 2000px;
+    height: 2000px; */
+    z-index: 10;
+    /* transform: translate(-3%,-5%); */
+    }
+    @keyframes treatment{
+        100%{opacity: 0;}
+    }

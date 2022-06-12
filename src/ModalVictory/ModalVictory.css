@@ -1,11 +1,11 @@
 .wrapper_victory{
     margin:auto ;
-    padding-top: 300px;
+    /* padding-top: 300px; */
     outline: 1px solid rgb(56, 192, 51);
    text-align: center;
    margin-top: 30px;
    box-shadow: 0 0 10px 2px rgb(56, 192, 51);
-   height: 550px;
+   height: 92vh;
    width: 800px;
    background-image: url('https://images.wallpaperscraft.ru/image/single/peshchera_kamen_kamennyj_170742_1280x720.jpg');
    background-repeat: no-repeat;
@@ -13,6 +13,7 @@
    background-position: center;
 }
 .dispalay_victory{
+    padding-top: 10vh;
     color: white;
     /* outline: 1px solid red; */
     font-size: 40px;
@@ -36,7 +37,12 @@
 @media(max-width:620px){
     .wrapper_victory{
         width: 100%;
-        padding-top: 200px;
-        margin-top: 0px;
+        height: 600px;
+        margin-top: 25px;
+        /* padding-top: 200px; */
+        /* margin-top: 0px; */
     }
 }
+/* margin-top: 25px;
+height: 600px;
+overflow: auto; */

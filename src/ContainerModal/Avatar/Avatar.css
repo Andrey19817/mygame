@@ -2,3 +2,7 @@
     width: 100px;
     height: 100px;
 }
+.imgAvatar:hover{
+    cursor: pointer;
+    transform: scale(2.05)
+}

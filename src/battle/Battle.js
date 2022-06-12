@@ -1,25 +1,31 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef,useContext } from "react";
 import './Battle.css'
 import { Atack6 } from '../Atack6/Atack6'
 import { getMyXp, getXp } from '../GetXp/GetXp'
-import { ContainerModalVictory} from "../Container_modal_victory/ContainerModalVictory";
-import { ContainerModalDeath } from '../ContainerModalDeath/ContainerModalDeath'
-import {useSelector} from 'react-redux'
-import {ContainerCharacteristics} from '../ContainerCharacteristics/ContainerCharacteristics'
-import {Cheats} from './Cheats'
+import ContainerModalVictory from "../Container_modal_victory/ContainerModalVictory";
+import ContainerModalDeath from '../ContainerModalDeath/ContainerModalDeath'
+import { useSelector, useDispatch } from 'react-redux'
+import { ContainerCharacteristics } from '../ContainerCharacteristics/ContainerCharacteristics'
+// import Cheats from './Cheats'
+import { ContainerActivType } from '../ContainerActivType/ContainerActivType'
+import { MainContext } from "../context";
 
 // ============================================================
-function Battle(props) {
-  const pers = useSelector(({pers:{pers}})=>pers)
+export function Battle({ replay, show_victory_window, showAvatar }) {
+  const dispatch = useDispatch()
+  // const pers = useSelector(({ pers: { pers } }) => pers)
+  
+  // const [showCheat, setShowCheat] = useState(false)
+const {showCheat, setShowCheat,myXp, setMyXp,pers} = useContext(MainContext)
   const [level, setLevel] = useState(0)
-  const monstrArea_next_level = useSelector(({monstrArea})=>monstrArea)
-  const [monstrArea, setMonstrArea] = useState(useSelector(({monstrArea})=>monstrArea[level]))
-  let armorMonstr = monstrArea.armor // броня противника
-  let armorMy = pers.armor  // броня героя
-  let strongMonstr = monstrArea.strong
-  let strongMy = pers.strong
+  const monstrArea_next_level = useSelector(({ monstrArea }) => monstrArea)
+  const [monstrArea, setMonstrArea] = useState(useSelector(({ monstrArea }) => monstrArea[level]))
+  const armorMonstr = monstrArea.armor // броня противника
+  const armorMy = pers.armor  // броня героя
+  const strongMonstr = monstrArea.strong
+  const strongMy = pers.strong
   const [monstrXp, setMonstrXp] = useState(getXp(monstrArea.xp))// жизнь противника
-  const [myXp, setMyXp] = useState(getMyXp(pers.xp))// жизнь героя
+  // const [myXp, setMyXp] = useState(getMyXp(pers.xp))// жизнь героя
   const [isBtn, setisBtn] = useState(false)// переключатель отображения кнопки д6 и попадания
   const [isBtn_20, seisBtn_20] = useState(true)// переключатель отображения кнопки д20
   const [isBtn_20_miss, setisBtn_20_miss] = useState(false)// переключатель отображения кнопки д20 и попадания
@@ -102,6 +108,7 @@ function Battle(props) {
   }
 
   const Atack20 = () => {     // функция броска д20
+    dispatch({ type: ContainerActivType.getCounter })
     setisBtn_20_miss(false)
     let result = Math.round(Math.random() * (20 - 1) + 1)
     setDisplayDice(result)
@@ -156,7 +163,7 @@ function Battle(props) {
       seisBtn_20(true)
       setTreatment(true)
     } else {
-      props.show_victory_window()
+      show_victory_window()
     }
   }
 
@@ -164,42 +171,41 @@ function Battle(props) {
     audioRef_batle_fon.current.volume = 0.2
   }, [])
 
-  
-    useEffect(() => {
-      if (monstrXp.length === 0) {
-        seisBtn_20(false)
-        setVictory(true)
-      } else {
-        setVictory(false)
-      }
-      if (myXp.length === 0) {
-        setDeath(true)
-        setChange(false)
-      }
-    }, [monstrXp, myXp, monstrArea])
-  
+  useEffect(() => {
+    if (monstrXp.length === 0) {
+      seisBtn_20(false)
+      setVictory(true)
+    } else {
+      setVictory(false)
+    }
+    if (myXp.length === 0) {
+      setDeath(true)
+      setChange(false)
+    }
+  }, [monstrXp, myXp, monstrArea])
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" tabIndex={0} onKeyDown={(event) => {// показ окна для читов
+      event.key === `Escape` && setShowCheat(true)
+    }}>
+      {/* {showCheat && <Cheats setShowCheat={setShowCheat} myXp={myXp} setMyXp={setMyXp} />} */}
       {damageMonstr_Display ? <div className="myTakesDamage"></div> : null}
       {treatment_play ? <div className="treatment_play"></div> : null}
       <audio src={audioDice} ref={audioRef}></audio>
       {!death ? <audio src={audioBattleFon} autoPlay loop ref={audioRef_batle_fon}></audio> : <audio src={audioDeathAdress} autoPlay loop></audio>}
       <audio src={audioHit} ref={audioHitPlay}></audio>
       <div className={`container_atack_monstr_d20 ${dice_20_monstr_activ ? 'dice_20_monstr_play' : ''} `} >
-        {/* <div className="diceMonstr_bacground">
-        </div> */}
-                <div className="diceMonstr">{displayDiceMonstr}</div>
+
+        <div className="diceMonstr">{displayDiceMonstr}</div>
 
       </div>
       <div className={`container_atack_monstr_d6 ${dice_6_monstr_activ ? 'dice_6_monstr_play' : ''}`}>{displayDiceMonstr_d6}</div>
       <div className="nameMonstr">- {monstrArea.name} -</div>
-
-    <ContainerCharacteristics level = {level} treatment={treatment} death={death} audioTreatment={audioTreatment}
-    setTreatment_play={setTreatment_play} setMyXp={setMyXp} setTreatment={setTreatment} myXp={myXp} monstrXp={monstrXp}
-    damageMy_Display={damageMy_Display} damageMy={damageMy} damageMonstr_Display={damageMonstr_Display} 
-    damageMonstr={damageMonstr} showAvatar={props.showAvatar} monstrArea={monstrArea}
-    />
+      <ContainerCharacteristics level={level} treatment={treatment} death={death} audioTreatment={audioTreatment}
+        setTreatment_play={setTreatment_play} setMyXp={setMyXp} setTreatment={setTreatment} myXp={myXp} monstrXp={monstrXp}
+        damageMy_Display={damageMy_Display} damageMy={damageMy} damageMonstr_Display={damageMonstr_Display}
+        damageMonstr={damageMonstr} showAvatar={showAvatar} monstrArea={monstrArea}
+      />
 
       {displayResult ? <p className="message message_hit">Попадание</p> : null}
       {monstrXp.length === 0 ? <p className="message message_victory">Победа</p> : null}
@@ -211,7 +217,7 @@ function Battle(props) {
       </div>
 
       <div className="containerPers">
-        <div className="myName" style={{color:'#DCA97E'}}>- {pers.name} -</div>
+        <div className="myName" style={{ color: '#DCA97E' }}>- {pers.name} -</div>
       </div>
       {change ? <div className="container_button">
         {isBtn ? <div className="container_button_atack6">
@@ -243,15 +249,13 @@ function Battle(props) {
           }}><div className="myDice">{displayDice}</div></div>
         </div> : null}
       </div> : null}
-         
       {victory ? <ContainerModalVictory next_level={next_level} /> : null}
-      {death ? <ContainerModalDeath  replay={props.replay} /> : null}
-      <Cheats setMyXp = {setMyXp} armorMy={armorMy}/>
+      {death ? <ContainerModalDeath replay={replay} /> : null}
     </div>
   )
 }
 
-export default React.memo(Battle)
+// export default React.memo(Battle)
 // ======================================================
 
 // ==========================================================

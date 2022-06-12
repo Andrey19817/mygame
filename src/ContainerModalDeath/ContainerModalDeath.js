@@ -1,15 +1,19 @@
-import React from "react";
+import React,{useContext} from "react";
 import './ContainerModalDeath.css'
 import { useDispatch, useSelector } from "react-redux";
 import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
+import {getMyXp} from '../GetXp/GetXp'
+import { MainContext } from "../context";
 
-export function ContainerModalDeath(props){
+ function ContainerModalDeath(props){
+    console.log('ContainerModalDeath');
     const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
     const audioClick = new Audio(audioClickAdress)
     const pers = useSelector(({pers:{pers}})=>pers)
-
     const dispatch = useDispatch()
-
+    // const persArea = useSelector(({persArea})=>persArea)
+    const {setMyXp} = useContext(MainContext)
+    dispatch({type:ContainerActivType.getPersArea})
     return (
         <>
         <h2>Вы закончили игру</h2>
@@ -23,9 +27,11 @@ export function ContainerModalDeath(props){
                 audioClick.play()
                 props.replay()
                 dispatch({type:ContainerActivType.persReplay})
+                setMyXp(getMyXp(10))
             }}>Начать еще раз ?</button>
         </div>
         </>
     )
 }
+export default React.memo(ContainerModalDeath)
 

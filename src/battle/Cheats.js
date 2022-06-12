@@ -1,33 +1,63 @@
-import React,{useState} from "react"
-import { useDispatch,useSelector } from "react-redux";
+import React, { useState, useRef, useEffect,useContext } from "react"
+import { useDispatch, useSelector } from "react-redux";
 import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
 import { getMyXp } from "../GetXp/GetXp";
+import './Cheats.css'
+import { MainContext } from "../context";
 
-
-export const Cheats = ({setMyXp})=>{
-    const pers = useSelector(({pers:{pers}})=>pers)
-    // console.log(pers);
-    const [cheatsValue,setChetsValue] = useState('')
+const Cheats = () => {
+    const {showCheat, setShowCheat,myXp, setMyXp} = useContext(MainContext)
+    const pers = useSelector(({ pers: { pers } }) => pers)
+    const ref = useRef()
+    const [cheatsValue, setChetsValue] = useState('')
+    const [cheatsPlay, setCheatsPlay] = useState(false)
     const dispatch = useDispatch()
-    const getPassword = (cheatsValue)=>{
-        if(cheatsValue === ContainerActivType.cheats_life){
-            dispatch({type:ContainerActivType.cheats_life})
+ const Shao_Kahns_laugh_adress = require('../audio/567478 (online-audio-converter.com).m4a')
+ const Shao_Kahns_laugh = new Audio(Shao_Kahns_laugh_adress)
+
+    const getPassword = (cheatsValue) => {   // ввод чита
+        if (cheatsValue === ContainerActivType.cheats_life) {
+            Shao_Kahns_laugh.play()
+            dispatch({ type: ContainerActivType.cheats_life })
             setMyXp(getMyXp(pers.xp))
-        }if(cheatsValue === ContainerActivType.cheats_strong){
-            dispatch({type:ContainerActivType.cheats_strong})
-        }if(cheatsValue === ContainerActivType.cheats_armor){
-            dispatch({type:ContainerActivType.cheats_armor})
-            
+            cheatsWindowPlay()
+        } if (cheatsValue === ContainerActivType.cheats_strong) {
+            Shao_Kahns_laugh.play()
+            dispatch({ type: ContainerActivType.cheats_strong })
+            cheatsWindowPlay()
+        } if (cheatsValue === ContainerActivType.cheats_armor) {
+            Shao_Kahns_laugh.play()
+            dispatch({ type: ContainerActivType.cheats_armor })
+            cheatsWindowPlay()
         }
         
     }
+    const cheatsWindowPlay = () => { //запуск анимации чита
+        setCheatsPlay(true)
+        setTimeout(() => {
+            setCheatsPlay(false)
+        }, 1000)
+    }
+    useEffect(() => {
+        ref.current.focus()
+    }, [])
+
     return (
-        <div className="container_cheats" style={{margin:'100px auto'}}>
-        <input type='password'  value = {cheatsValue} onChange={(event)=>setChetsValue(event.target.value)} />
-        <button onClick={()=>{
-            getPassword(cheatsValue)
-            
-        }}>Принять</button>
-        </div>
+        <>
+            {cheatsPlay && <div className="container_cheats_play"></div>}
+            <div className="container_cheats">
+                <input ref={ref} className="cheats_input" value={cheatsValue} onChange={(event) => setChetsValue(event.target.value)} onKeyDown={(event) => {
+                    if (event.key === 'Enter') {
+                        getPassword(cheatsValue)
+                        setChetsValue('')
+                        setTimeout(() => {
+                            setShowCheat(false)
+                        }, 1000)
+
+                    }
+                }} />
+            </div>
+        </>
     )
 }
+export default React.memo(Cheats)
