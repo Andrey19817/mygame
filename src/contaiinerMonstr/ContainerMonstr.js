@@ -43,7 +43,7 @@ export const monstrArea = [
       id:5,
       name:'Банши',
       xp:12,
-      strong:3,
+      strong:13,
       armor:5,
       img:'https://krot.info/uploads/posts/2022-01/1642551921_4-krot-info-p-prizrak-art-9.jpg'
     },
