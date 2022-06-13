@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef,useContext } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import './Battle.css'
 import { Atack6 } from '../Atack6/Atack6'
 import { getMyXp, getXp } from '../GetXp/GetXp'
@@ -11,8 +11,8 @@ import { MainContext } from "../context";
 
 // ============================================================
 export function Battle({ replay, show_victory_window, showAvatar }) {
-  const dispatch = useDispatch() 
-const {showCheat, setShowCheat,myXp, setMyXp,pers} = useContext(MainContext)
+  const dispatch = useDispatch()
+  const { setShowCheat, myXp, setMyXp, pers } = useContext(MainContext)
   const [level, setLevel] = useState(0)
   const monstrArea_next_level = useSelector(({ monstrArea }) => monstrArea)
   const [monstrArea, setMonstrArea] = useState(useSelector(({ monstrArea }) => monstrArea[level]))
@@ -195,7 +195,7 @@ const {showCheat, setShowCheat,myXp, setMyXp,pers} = useContext(MainContext)
       </div>
       <div className={`container_atack_monstr_d6 ${dice_6_monstr_activ ? 'dice_6_monstr_play' : ''}`}>{displayDiceMonstr_d6}</div>
       <div className="nameMonstr">- {monstrArea.name} -</div>
-      <ContainerCharacteristics  treatment={treatment} death={death} audioTreatment={audioTreatment}
+      <ContainerCharacteristics treatment={treatment} death={death} audioTreatment={audioTreatment}
         setTreatment_play={setTreatment_play} setMyXp={setMyXp} setTreatment={setTreatment} myXp={myXp} monstrXp={monstrXp}
         damageMy_Display={damageMy_Display} damageMy={damageMy} damageMonstr_Display={damageMonstr_Display}
         damageMonstr={damageMonstr} showAvatar={showAvatar} monstrArea={monstrArea}

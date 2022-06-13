@@ -10,6 +10,7 @@ import  './PersArea.css'
     const persArea = useSelector(({persArea})=>persArea)
     const dispatch = useDispatch()
     dispatch({type:ContainerActivType.getPersArea})
+//     console.log(useSelector(({persArea})=>persArea));
     return <>
     <h2>Список героев</h2>
     <div className="container_persArea">

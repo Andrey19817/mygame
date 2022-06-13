@@ -8,7 +8,7 @@ export function Avatar({avatar}){
         <>
         <div >
             <img className="imgAvatar" src={avatar} style={{border: '1px solid',
-    borderImage: 'url(https://i.gifer.com/RRr2.gif)  77 '}}/>
+    borderImage: 'url(https://i.gifer.com/RRr2.gif)  77 '}} alt='' />
         </div>
         </>
     )

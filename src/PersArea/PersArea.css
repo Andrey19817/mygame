@@ -32,3 +32,8 @@
     border-radius: 3px;
 
 }
+@media(max-width:620px){
+    .container_persArea{
+        height:300px ;
+    }
+}
