@@ -1,5 +1,4 @@
 
-
 import React, { useState } from "react";
 import './ContainerModal.css'
 import { Avatar } from "./Avatar/Avatar";
@@ -9,28 +8,20 @@ import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
 import { nanoid } from "nanoid"
 
 
-
 export function ContainerModal(props) {
   const dispatch = useDispatch()
   const pers = useSelector(({ pers }) => pers)
   const [value, setValue] = useState('')
 
-  console.log('ContainerModal');
+  // console.log('ContainerModal');
 
   const getName = (value) => {
     dispatch({ type: ContainerActivType.getName, payload: value })
   }
 
-  // const soundFon = require('../audio/kirill-pokrovsky-original-sin (1).mp3')
-  // const audioRef = useRef()
-  // const [isAudioPlay, setIsAudioPlay] = useState(false)
-
   const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
   const audioClick = new Audio(audioClickAdress)
-  // useEffect(() => {
-  //   audioRef.current.volume = 0.2
-  // }, [])
-
+ 
   const return_image_selection = () => {
     setShow_image_selection(true)
   }
@@ -39,9 +30,7 @@ export function ContainerModal(props) {
   const [show_input, setShow_input] = useState(true)//показ инпута
   const [getPicture, setGetPicture] = useState([])
 
-
   return (
-
     <div className="wrapper_modal">
       <button onClick={() => {
         props.audioFon()
@@ -81,17 +70,15 @@ export function ContainerModal(props) {
       <div className="container_buttonCreate">
         {!show_image_selection && !show_input ? <button className="buttonCreate" onClick={() => {
           if (value !== '') {
-            getName(`${value}`)
+            getName(value)
             audioClick.play()
-            props.audioRef.current.load()
+            props.audioRef.current.load()//перезагрузка
             props.audioRef.current.pause()
             props.play()
             dispatch({ type: ContainerActivType.getAvatar, payload: props.showAvatar })
-
           }
         }}>Начать</button> : null}
       </div>
-
     </div>
   )
 }

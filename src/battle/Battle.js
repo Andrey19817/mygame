@@ -6,16 +6,12 @@ import ContainerModalVictory from "../Container_modal_victory/ContainerModalVict
 import ContainerModalDeath from '../ContainerModalDeath/ContainerModalDeath'
 import { useSelector, useDispatch } from 'react-redux'
 import { ContainerCharacteristics } from '../ContainerCharacteristics/ContainerCharacteristics'
-// import Cheats from './Cheats'
 import { ContainerActivType } from '../ContainerActivType/ContainerActivType'
 import { MainContext } from "../context";
 
 // ============================================================
 export function Battle({ replay, show_victory_window, showAvatar }) {
-  const dispatch = useDispatch()
-  // const pers = useSelector(({ pers: { pers } }) => pers)
-  
-  // const [showCheat, setShowCheat] = useState(false)
+  const dispatch = useDispatch() 
 const {showCheat, setShowCheat,myXp, setMyXp,pers} = useContext(MainContext)
   const [level, setLevel] = useState(0)
   const monstrArea_next_level = useSelector(({ monstrArea }) => monstrArea)
@@ -25,7 +21,6 @@ const {showCheat, setShowCheat,myXp, setMyXp,pers} = useContext(MainContext)
   const strongMonstr = monstrArea.strong
   const strongMy = pers.strong
   const [monstrXp, setMonstrXp] = useState(getXp(monstrArea.xp))// жизнь противника
-  // const [myXp, setMyXp] = useState(getMyXp(pers.xp))// жизнь героя
   const [isBtn, setisBtn] = useState(false)// переключатель отображения кнопки д6 и попадания
   const [isBtn_20, seisBtn_20] = useState(true)// переключатель отображения кнопки д20
   const [isBtn_20_miss, setisBtn_20_miss] = useState(false)// переключатель отображения кнопки д20 и попадания
@@ -188,7 +183,6 @@ const {showCheat, setShowCheat,myXp, setMyXp,pers} = useContext(MainContext)
     <div className="wrapper" tabIndex={0} onKeyDown={(event) => {// показ окна для читов
       event.key === `Escape` && setShowCheat(true)
     }}>
-      {/* {showCheat && <Cheats setShowCheat={setShowCheat} myXp={myXp} setMyXp={setMyXp} />} */}
       {damageMonstr_Display ? <div className="myTakesDamage"></div> : null}
       {treatment_play ? <div className="treatment_play"></div> : null}
       <audio src={audioDice} ref={audioRef}></audio>
@@ -201,7 +195,7 @@ const {showCheat, setShowCheat,myXp, setMyXp,pers} = useContext(MainContext)
       </div>
       <div className={`container_atack_monstr_d6 ${dice_6_monstr_activ ? 'dice_6_monstr_play' : ''}`}>{displayDiceMonstr_d6}</div>
       <div className="nameMonstr">- {monstrArea.name} -</div>
-      <ContainerCharacteristics level={level} treatment={treatment} death={death} audioTreatment={audioTreatment}
+      <ContainerCharacteristics  treatment={treatment} death={death} audioTreatment={audioTreatment}
         setTreatment_play={setTreatment_play} setMyXp={setMyXp} setTreatment={setTreatment} myXp={myXp} monstrXp={monstrXp}
         damageMy_Display={damageMy_Display} damageMy={damageMy} damageMonstr_Display={damageMonstr_Display}
         damageMonstr={damageMonstr} showAvatar={showAvatar} monstrArea={monstrArea}

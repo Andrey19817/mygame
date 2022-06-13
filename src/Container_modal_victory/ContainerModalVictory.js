@@ -5,7 +5,7 @@ import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
 
 
  function ContainerModalVictory(props){
-    console.log('ContainerModalVictory');
+    // console.log('ContainerModalVictory');
     const dispatch = useDispatch()
     const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
     const audioClick = new Audio(audioClickAdress)

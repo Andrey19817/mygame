@@ -3,7 +3,7 @@ import { Battle } from './battle/Battle';
 import { ContainerModal } from './ContainerModal/ContainerModal'
 import './App.css'
 import ModalVictory from "./ModalVictory/ModalVictory";
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import { MainContext } from "./context";
 import Cheats from "./battle/Cheats";
 
@@ -13,7 +13,6 @@ function App() {
   const [getModalVictory, setGetModalVictory] = useState(false)
   const [batle, setBatle] = useState(false)
   const [isAudioPlay, setIsAudioPlay] = useState(false)
-  // const pers = useSelector(({ pers: { pers } }) => pers)
   const {showCheat, setShowCheat} = useContext(MainContext)
 
   const audioRef = useRef()
@@ -54,7 +53,6 @@ function App() {
     }
     setIsAudioPlay(isAudioPlay => !isAudioPlay)
   }
-  // const [showCheat,setShowCheat] = useState(false)
   return (
     <div className="wrapper_video">
       <video className="video" src='https://media.istockphoto.com/videos/realistic-dry-ice-smoke-clouds-fog-video-id1175691070' autoPlay loop muted ></video>
@@ -67,4 +65,3 @@ function App() {
   )
 }
 export default React.memo(App)
-// export default App;

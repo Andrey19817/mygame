@@ -6,12 +6,11 @@ import {getMyXp} from '../GetXp/GetXp'
 import { MainContext } from "../context";
 
  function ContainerModalDeath(props){
-    console.log('ContainerModalDeath');
+    // console.log('ContainerModalDeath');
     const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
     const audioClick = new Audio(audioClickAdress)
     const pers = useSelector(({pers:{pers}})=>pers)
     const dispatch = useDispatch()
-    // const persArea = useSelector(({persArea})=>persArea)
     const {setMyXp} = useContext(MainContext)
     dispatch({type:ContainerActivType.getPersArea})
     return (

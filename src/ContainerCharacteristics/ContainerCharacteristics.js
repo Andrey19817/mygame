@@ -1,9 +1,9 @@
 import React,{useState} from "react"
 import { useSelector } from "react-redux"
-import { getMyXp, getXp } from '../GetXp/GetXp'
+import { getMyXp } from '../GetXp/GetXp'
 
 
-export const ContainerCharacteristics = ({level,treatment,death,audioTreatment,setTreatment_play,setMyXp,setTreatment,
+export const ContainerCharacteristics = ({treatment,death,audioTreatment,setTreatment_play,setMyXp,setTreatment,
     myXp,monstrXp,damageMy_Display,damageMy,damageMonstr_Display,damageMonstr,showAvatar,monstrArea})=>{
         const [pers, setPers] = useState(useSelector(({pers:{pers}})=>pers))
         

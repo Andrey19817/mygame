@@ -4,9 +4,6 @@ import { monstrArea } from '../contaiinerMonstr/ContainerMonstr'
 import { ContainerActivType } from '../ContainerActivType/ContainerActivType'
 
 
-
-
-
 const defaultState = {
    pers: pers,
    monstrArea: monstrArea,

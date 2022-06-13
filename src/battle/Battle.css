@@ -58,7 +58,6 @@ transform: translate(-30%,-20%);
 }
 .container_my_characteristics ,.container_monstr_characteristics{
     text-align: center;
-    /* color: red; */
     width: 75px;
 }
 .monstrDice{
@@ -89,8 +88,8 @@ transform: translate(-30%,-20%);
     font-size: 30px;
 }
 .container_my_xp{
-    margin-top: 20px;
-    margin:20px auto;
+    /* margin-top: 20px; */
+    margin:30px auto;
     width: 50%;
     display: flex;
     text-align: center;
@@ -253,7 +252,7 @@ height: 10px;
     width: 30px;
     margin-left: 47%;
     color: red;
-    font-size: 30px;
+    font-size: 40px;
 }
 .damageMy{
     position: absolute;
@@ -264,8 +263,6 @@ height: 10px;
 }
 /* ============================================================ */
 .container_atack_monstr_d20{
-    /* border: 3px solid;
-    border-image: url('https://acegif.com/wp-content/gifs/fire-13.gif') 27 ; */
     width: 70px;
     height: 70px;
     box-shadow: 0 0 10px 2px black;
@@ -329,7 +326,6 @@ height: 10px;
         animation: diceMonstr_6 1s linear  forwards;
         z-index: 10;
         transform: translate(-50%,-50%);
-        /* background-image: url(../audio/04526.mp3); */
     }
     .treatment{
         position: relative;
@@ -341,14 +337,11 @@ height: 10px;
         background-repeat: no-repeat;
         background-size: cover;
         box-shadow: 0 0 10px 2px rgb(56, 192, 51);
-        /* animation: damageMonstr 0.5s linear  forwards; */
     }
     .treatment:hover{
         cursor: pointer;
         transform: scale(1.05);
         outline: 2px solid white;
-        /* box-shadow: 0 0 10px 2px green; */
-
     }
     .treatment_play{
     background-color: rgb(56, 192, 51);
@@ -400,8 +393,6 @@ height: 10px;
         .monstr{
             height: 65%;
             width: 150px;
-            /* overflow: hidden; */
-            /* background-size: 100%; */
         }
         .message{
             font-size: 20px;

@@ -11,9 +11,7 @@ const Main = ()=>{
     const pers = useSelector(({ pers: { pers } }) => pers)
     const [showCheat, setShowCheat] = useState(false)
     const [myXp, setMyXp] = useState(getMyXp(pers.xp))// жизнь героя
-    // useEffect(()=>{
-
-    // },[pers.xp])
+ 
     return (
       
        <MainContext.Provider value = {{showCheat, setShowCheat,myXp, setMyXp,pers}}>
@@ -28,11 +26,6 @@ root.render(
 <Provider store = {store}>
 <Main/>
 </Provider>
-
-    
-// {/* <Provider store = {store}>
-// <App />,
-// </Provider> */}
 );
 
 

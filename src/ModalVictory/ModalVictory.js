@@ -9,7 +9,7 @@ import {getMyXp} from '../GetXp/GetXp'
 
 
 function ModalVictory(props) {
-    console.log('ModalVictory');
+    // console.log('ModalVictory');
     const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
     const audioClick = new Audio(audioClickAdress)
     const {setMyXp} = useContext(MainContext)

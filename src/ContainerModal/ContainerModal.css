@@ -1,6 +1,5 @@
 .wrapper_modal{
     margin: auto;
-    /* outline: 1px solid rgb(56, 192, 51); */
    text-align: center;
    margin-top: 30px;
    box-shadow: 0 0 10px 2px rgb(56, 192, 51);
@@ -11,18 +10,7 @@
    background-size: cover;
    background-position: center;
 }
-.modal{
-    /* margin: auto; */
-    /* margin-top: 100px; */
-    /* padding: 20px; */
-    /* outline: 1px solid red;
-    width: 100%; */
-    /* height: 100vh; */
-    /* background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center; */
-   /* background-image: url('https://images.wallpaperscraft.ru/image/single/peshchera_kamen_kamennyj_170742_1280x720.jpg'); */
-}
+
 .container_buttonCreate{
     margin-top: 30px;
 }
@@ -43,7 +31,6 @@
     transform: scale(0.97);
 }
 .container_input{
-    /* outline: 1px solid red; */
     display: flex;
     justify-content: center;
     margin-top: 35%;
@@ -57,17 +44,14 @@ input{
     box-shadow: 0 0 10px 2px rgb(56, 192, 51);
     border-radius: 5px;
     background-image: url('https://i.gifer.com/76Yn.gif');
-    /* box-shadow: 0 0 10px 2px black; */
 }
 .best_pers{
     color: white;
     height: 10px;
 }
 .show_image_selection{
-    /* outline: 1px solid red; */
     margin: auto;
     width: 80%;
-    /* height: 600px; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-auto-rows: minmax(100px, auto);
@@ -83,9 +67,6 @@ input{
     background-image: url('https://i.gifer.com/76Yn.gif');
     box-shadow: 0 0 10px 2px rgb(56, 192, 51);
     border-radius: 5px;
-    /* background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center; */
 }
 .getName:hover{
     cursor: pointer;
@@ -105,6 +86,5 @@ p{
     }
     .show_image_selection{
         height: 600px;
-        /* overflow: auto; */
     }
 }
