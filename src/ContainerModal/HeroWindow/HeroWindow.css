@@ -8,6 +8,9 @@
 .hero_window{
     margin-right: 40px;
 }
+.hero_window_avatar{
+    transition: all .8s;
+}
 .hero_window_avatar:hover{
     cursor: pointer;
     transform: scale(2.05)

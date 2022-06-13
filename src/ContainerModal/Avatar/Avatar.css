@@ -4,5 +4,6 @@
 }
 .imgAvatar:hover{
     cursor: pointer;
-    transform: scale(2.05)
+    transform: scale(2.05);
+    transition: all .8s;
 }

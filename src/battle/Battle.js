@@ -211,7 +211,7 @@ export function Battle({ replay, show_victory_window, showAvatar }) {
       </div>
 
       <div className="containerPers">
-        <div className="myName" style={{ color: '#DCA97E' }}>- {pers.name} -</div>
+        <div className="myName" >- {pers.name} -</div>
       </div>
       {change ? <div className="container_button">
         {isBtn ? <div className="container_button_atack6">

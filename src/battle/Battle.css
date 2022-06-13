@@ -161,6 +161,7 @@ height: 10px;
 .myName{
     font-size: 30px;
     text-align: center;
+    color: #DCA97E;
 }
 .containerPers{
     display: flex;
@@ -257,7 +258,7 @@ height: 10px;
 .damageMy{
     position: absolute;
     width: 30px;
-    margin-left: 30%;
+    margin-left: 28%;
     color: red;
     font-size: 40px;
 }
@@ -357,7 +358,7 @@ height: 10px;
     @media(max-width:620px){
         .wrapper{
             margin-top: 50px;
-            height: 500px;
+            height: 550px;
         }
         .dice_20,.container_atack_monstr_d20{
             width: 40px;
@@ -405,7 +406,7 @@ height: 10px;
         .myName,.nameMonstr{
             position: relative;
             font-size: 20px;
-            color:wheat;
+            color:rgb(179, 245, 209);
             z-index: 10;
         }
         .container_atack_monstr_d20{

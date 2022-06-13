@@ -23,5 +23,8 @@ h2{
     text-align: center;
 }
 @media(max-width:620px){
-    
+    .container_button_victory{
+        height: 90px;
+        margin-top: -5px;
+    }
 }
