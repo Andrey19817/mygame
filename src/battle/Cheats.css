@@ -1,37 +1,41 @@
-.container_cheats{
-    top: 0;
-    position: absolute;
-    width: 100%;
-    height: 30vh;
-    background-color: rgba(0,0,0, 0.5);
-    z-index: 10;
+.container_cheats {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 30vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
 }
-.cheats_input{
-    position: absolute;
-    margin: auto;
-    width: 100%;
-    bottom: 0;
-    background-image: none;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
+.cheats_input {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  bottom: 0;
+  background-image: none;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
-.cheats_input:active, :hover, :focus {
-    outline: 0;
-    outline-offset: 0;
+.cheats_input:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
 }
-.container_cheats_play{
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5XXo8ATm0RImYNjL2It5ieSg1yijS4e4oA&usqp=CAU');
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    opacity: 0.6;
-    animation: treatment 1s linear  forwards;
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    z-index: 10;
-    }
-    @keyframes treatment{
-        100%{opacity: 0;}
-    }
+.container_cheats_play {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ5XXo8ATm0RImYNjL2It5ieSg1yijS4e4oA&usqp=CAU");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  opacity: 0.6;
+  animation: treatment 1s linear forwards;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+@keyframes treatment {
+  100% {
+    opacity: 0;
+  }
+}

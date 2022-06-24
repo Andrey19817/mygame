@@ -1,0 +1,49 @@
+.ContainerRegulations {
+  position: absolute;
+  width: 700px;
+  /* margin-left: auto; */
+  text-align: center;
+  padding: 10px;
+  /* height: 20vh; */
+  box-shadow: 0 0 10px 2px black;
+  margin-left: 5%;
+  margin-top: 5%;
+  background-color: wheat;
+  z-index: 200;
+}
+li {
+  /* text-align: center; */
+  width: 100%;
+  list-style-type: none;
+  color: rgb(0, 103, 102);
+}
+.regulations_ul {
+  text-align: center;
+  padding: 0;
+}
+
+.regulations_button {
+  margin-top: 45px;
+  color: wheat;
+  margin-left: 5px;
+  height: 35px;
+  width: 30%;
+  background-image: url("https://i.gifer.com/76Yn.gif");
+  box-shadow: 0 0 10px 2px rgb(56, 192, 51);
+  border-radius: 5px;
+}
+.regulations_button:hover {
+  cursor: pointer;
+  transform: scale(0.98);
+}
+span {
+  color: red;
+}
+.rule_header {
+  color: rgb(0, 103, 102);
+}
+@media (max-width: 620px) {
+  .ContainerRegulations {
+    width: 300px;
+  }
+}

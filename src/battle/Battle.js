@@ -9,6 +9,7 @@ import { ContainerCharacteristics } from "../ContainerCharacteristics/ContainerC
 import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
 import { MainContext } from "../context";
 import { ContainerButton } from "../ContainerButton/ContainerButton";
+import { ContainerRegulations } from "./ContainerRegulations/ContainerRegulations";
 
 // ============================================================
 export function Battle({ replay, show_victory_window, showAvatar }) {
@@ -39,6 +40,7 @@ export function Battle({ replay, show_victory_window, showAvatar }) {
     setDisplayDice_6,
     setDisplayDice,
     isAudioPlay,
+    regulations
   } = useContext(MainContext);
   const monstrArea_next_level_for_filter = useSelector(
     ({ monstrArea }) => monstrArea
@@ -199,6 +201,7 @@ export function Battle({ replay, show_victory_window, showAvatar }) {
         event.key === `Escape` && setShowCheat(true);
       }}
     >
+      {regulations && <ContainerRegulations/>}
       {damageMonstr_Display && <div className="myTakesDamage"></div>}
 
       {!death && isAudioPlay && (

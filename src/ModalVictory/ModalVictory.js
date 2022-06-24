@@ -14,7 +14,7 @@ function ModalVictory(props) {
     setMonstrXp,
     seisBtn_20,
     isAudioPlay,
-    setTreatment
+    setTreatment,
   } = useContext(MainContext);
   const audioClickAdress = require("../audio/567421 (online-audio-converter.com).mp3");
   const audioClick = new Audio(audioClickAdress);
@@ -38,7 +38,7 @@ function ModalVictory(props) {
               setMonstrArea(defaultMonstr);
               setMonstrXp(getXp(3));
               seisBtn_20(true);
-              setTreatment(true)
+              setTreatment(true);
             }}
           >
             Давай добьем кого не добили ?

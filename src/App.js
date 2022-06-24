@@ -23,7 +23,8 @@ function App() {
     setMonstrArea,
     setMyXp,
     setMonstrXp,
-    setTreatment
+    setTreatment,
+    setRegulations,
   } = useContext(MainContext);
   const [show_image_selection, setShow_image_selection] = useState(false); //показать окно выбора картинки
   const [show_input, setShow_input] = useState(true); //показ инпута
@@ -87,7 +88,8 @@ function App() {
     setMonstrArea(defaultMonstr);
     setMonstrXp(getXp(defaultMonstr.xp));
     seisBtn_20(true);
-    setTreatment(true)
+    setTreatment(true);
+    setRegulations(false);
   };
 
   return (
