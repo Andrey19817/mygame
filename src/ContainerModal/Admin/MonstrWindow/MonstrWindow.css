@@ -1,0 +1,35 @@
+.characteristic{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 20px;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.container_characteristic{
+  text-align: center;
+}
+.opacity{
+    opacity: 0.5;
+}
+.input_monstr_window{
+    width: 30px;
+    margin-left: 5px;
+    background-image: none;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+.button_reestablish{
+    color: wheat;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    height: 25px;
+    background-image: url('https://i.gifer.com/76Yn.gif');
+    box-shadow: 0 0 10px 2px rgb(56, 192, 51);
+    border-radius: 5px;
+}
+.div_container_monstr:hover{
+    cursor: pointer;
+}

@@ -1,14 +1,20 @@
-import React,{useState} from "react"
+import React,{useState,useContext} from "react"
 import { useSelector } from "react-redux"
+import { MainContext } from "../context"
 import { getMyXp } from '../GetXp/GetXp'
+import './ContainerCharacteristics.css'
 
 
-export const ContainerCharacteristics = ({treatment,death,audioTreatment,setTreatment_play,setMyXp,setTreatment,
-    myXp,monstrXp,damageMy_Display,damageMy,damageMonstr_Display,damageMonstr,showAvatar,monstrArea})=>{
+export const ContainerCharacteristics = ({
+   showAvatar})=>{
+      const {treatment,setTreatment,death,setMyXp,myXp,setTreatment_play,monstrXp,damageMy_Display,damageMy,damageMonstr_Display,monstrArea,damageMonstr,treatment_play,isAudioPlay} = useContext(MainContext)
         const [pers, setPers] = useState(useSelector(({pers:{pers}})=>pers))
+        const audioTreatmentAdress = require('../audio/568274 (online-audio-converter.com).mp3')
+        const audioTreatment = new Audio(audioTreatmentAdress)
         
     return (
         <div className="container_characteristics">
+          {treatment_play ? <div className="treatment_play"></div> : null}
         <div className="container_my_characteristics">
           <img src={showAvatar.src} style={{ width: '60px', height: '60px', boxShadow: '0 0 10px 2px green',border: '1px solid',
     borderImage: 'url(https://i.gifer.com/RRr2.gif)  1 ' }} alt="" />
@@ -17,7 +23,7 @@ export const ContainerCharacteristics = ({treatment,death,audioTreatment,setTrea
           <p>Сила {pers.strong}</p>
           <p>Броня {pers.armor}</p>
           {treatment && !death ? <div className="treatment" onClick={() => {
-            audioTreatment.play()
+            isAudioPlay && audioTreatment.play()
             setTreatment_play(true)
             setMyXp(getMyXp(pers.xp))
             setTreatment(false)

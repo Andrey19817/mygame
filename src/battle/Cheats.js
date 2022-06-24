@@ -6,7 +6,7 @@ import './Cheats.css'
 import { MainContext } from "../context";
 
 const Cheats = () => {
-    const {showCheat, setShowCheat,myXp, setMyXp} = useContext(MainContext)
+    const { setShowCheat,setMyXp,isAudioPlay} = useContext(MainContext)
     const pers = useSelector(({ pers: { pers } }) => pers)
     const ref = useRef()
     const [cheatsValue, setChetsValue] = useState('')
@@ -17,16 +17,16 @@ const Cheats = () => {
 
     const getPassword = (cheatsValue) => {   // ввод чита
         if (cheatsValue === ContainerActivType.cheats_life) {
-            Shao_Kahns_laugh.play()
+            isAudioPlay && Shao_Kahns_laugh.play()
             dispatch({ type: ContainerActivType.cheats_life })
             setMyXp(getMyXp(pers.xp))
             cheatsWindowPlay()
         } if (cheatsValue === ContainerActivType.cheats_strong) {
-            Shao_Kahns_laugh.play()
+            isAudioPlay && Shao_Kahns_laugh.play()
             dispatch({ type: ContainerActivType.cheats_strong })
             cheatsWindowPlay()
         } if (cheatsValue === ContainerActivType.cheats_armor) {
-            Shao_Kahns_laugh.play()
+            isAudioPlay && Shao_Kahns_laugh.play()
             dispatch({ type: ContainerActivType.cheats_armor })
             cheatsWindowPlay()
         }
@@ -39,7 +39,7 @@ const Cheats = () => {
         }, 1000)
     }
     useEffect(() => {
-        ref.current.focus()
+        ref.current.focus()//фокус на input
     }, [])
 
     return (

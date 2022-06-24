@@ -5,7 +5,6 @@
     left: 0;
     min-width: 100%;
     min-height: 100vh;
-    /* height: 100vh; */
 }
 .wrapper_video{
   margin: auto;
@@ -15,4 +14,62 @@
   overflow-x: hidden;
   min-height: 100vh;
   overflow: hidden;
+}
+.button_volume_off{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 95%;
+  margin-top: 1%;
+  background-image: url('https://media.istockphoto.com/photos/button-sound-off-2d-picture-id468104363?s=612x612');
+  background-repeat: no-repeat;
+  background-size: 143%;
+  background-position: center;
+}
+.button_volume_on{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  margin-left: 95%;
+  margin-top: 1%;
+  background-image: url('https://www.eco-izmerenie.kiev.ua/uploads/sound-hi.jpg');
+  background-repeat: no-repeat;
+  background-size: 143%;
+  background-position: center;
+}
+.button_volume_on:hover, .button_volume_off{
+  cursor: pointer;
+}
+.button_exit:hover{
+  cursor: pointer;
+  transform: scale(0.9);
+  box-shadow: 0 0 10px 2px rgb(192, 13, 13);
+}
+
+.button_exit{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: 145%;
+  background-position: center;
+  background-position-y: 40%;
+  position: absolute;
+  margin-left: 2%;
+  box-shadow: 0 0 10px 2px green;
+  background-image: url('https://c8.alamy.com/comp/GRNM32/exit-icon-GRNM32.jpg');
+}
+@media(max-width:620px){
+  .button_exit{
+    width: 30px;
+  height: 30px;
+  margin-top: -10%;
+  }
+  .button_volume_on,.button_volume_off{
+    width: 30px;
+  height: 30px;
+  margin-left: 90%;
+  }
 }

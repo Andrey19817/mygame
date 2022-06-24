@@ -13,5 +13,9 @@ export const ContainerActivType = {
     getCounter:'getCounter',
     cheats_life:'1111',
     cheats_strong:'2222',
-    cheats_armor:'3333'
+    cheats_armor:'3333',
+    check:'check',
+    getCheck:'getCheck',
+    create_monstr:'create_monstr',
+    life_editing:'life_editing'
 }

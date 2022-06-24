@@ -1,14 +1,12 @@
 .wrapper{
     margin: auto;
     margin-top: 30px;
-    /* outline: 1px solid red; */
     max-width: 800px;
-    height: 850px;
+    height: 86vh;
     padding-top: 20px;
     position: relative;
     box-shadow: 0 0 10px 2px rgb(192, 13, 13);
     background-image: url('https://i.pinimg.com/originals/1f/9d/2c/1f9d2cbc0bdc6183c61e57889b4e96ea.jpg');
-    /* background-image: url('https://thumbs.dreamstime.com/b/%D0%BF%D0%BE%D0%B4%D0%B7%D0%B5%D0%BC%D0%B5%D0%BB%D1%8C%D0%B5-%D0%B7%D0%B0%D0%BC%D0%BA%D0%B0-%D1%81-%D0%BB%D1%83%D1%87-%D1%81%D0%B2%D0%B5%D1%82%D0%BE%D0%BC-93845874.jpg'); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -88,7 +86,6 @@ transform: translate(-30%,-20%);
     font-size: 30px;
 }
 .container_my_xp{
-    /* margin-top: 20px; */
     margin:30px auto;
     width: 50%;
     display: flex;
@@ -281,7 +278,6 @@ height: 10px;
      width: 23px;
      text-align: center;
      margin-top: 21px;
-     /* margin-left: 22px; */
      font-size: 24px;
      border-radius: 50%;
      color: white;
@@ -344,32 +340,23 @@ height: 10px;
         transform: scale(1.05);
         outline: 2px solid white;
     }
-    .treatment_play{
-    background-color: rgb(56, 192, 51);
-    animation: treatment 1s linear  forwards;
-    position: absolute;
-    width: 2000px;
-    height: 1500px;
-    transform: translate(-30%,-20%);
-    }
-    @keyframes treatment{
-        100%{opacity: 0;}
-    }
+   
     @media(max-width:620px){
         .wrapper{
             margin-top: 50px;
             height: 550px;
         }
-        .dice_20,.container_atack_monstr_d20{
-            width: 40px;
-            height: 40px;
+        .dice_20,.container_atack_monstr_d20,.container_atack_monstr_d6,.dice_6{
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
         }
         .myDice{
         width: 27%;
         text-align: center;
         margin-top: 32%;
         margin-left: 35%;
-        font-size: 11px;
+        font-size: 9px;
         border-radius: 50%;
         color: white;
         background-color: #00007E;
@@ -381,12 +368,12 @@ height: 10px;
          text-align: center;
          margin-top: 30%;
          margin-left: -4%;
-         font-size: 11px;
+         font-size: 9px;
          border-radius: 50%;
          color: white;
          position: absolute;
         }
-        .container_atack_monstr_d6,.dice_6,.treatment{
+        .treatment{
             width: 40px;
             height: 40px;
             font-size: 20px;
@@ -410,10 +397,14 @@ height: 10px;
             z-index: 10;
         }
         .container_atack_monstr_d20{
-            margin-left: 60%;
+            margin-left: 85%;
+            margin-top: 60%;
         }
         .container_atack_monstr_d6{
-            margin-left: 70%;
+            margin-left: 85%;
+            margin-top: 70%;
+            width: 30px;
+            height: 30px;
         }
         .container_my_xp{
             margin-top: 0;
@@ -447,14 +438,14 @@ height: 10px;
                 width: 20px;
                 margin-left: 47%;
                 color: red;
-                font-size: 20px;
+                font-size: 40px;
                 }
                 .damageMy{
                     position: absolute;
                     width: 0px;
                     margin-left: 30%;
                     color: red;
-                    font-size: 20px;
+                    font-size: 40px;
                 }
                 .monsterTakesDamage{
                     background-color: #CE0000;

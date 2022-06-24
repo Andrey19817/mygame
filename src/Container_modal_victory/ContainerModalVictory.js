@@ -1,14 +1,15 @@
-import React from "react";
+import React,{useContext} from "react";
 import './ContainerModalVictory.css'
 import { useDispatch } from "react-redux";
 import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
+import { MainContext } from "../context";
 
 
  function ContainerModalVictory(props){
-    // console.log('ContainerModalVictory');
     const dispatch = useDispatch()
     const audioClickAdress = require('../audio/567421 (online-audio-converter.com).mp3')
     const audioClick = new Audio(audioClickAdress)
+    const {isAudioPlay} = useContext(MainContext)
 
     return(
         <>
@@ -19,7 +20,7 @@ import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
                 <button onClick={()=>{
                     dispatch({type:ContainerActivType.increase_performance_life})
                     props.next_level()
-                    audioClick.play()
+                    isAudioPlay && audioClick.play()
                     }
                     }>+</button>
             </div>
@@ -28,7 +29,7 @@ import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
             <button onClick={()=>{
                 dispatch({type:ContainerActivType.increase_performance_strong})
                 props.next_level()
-                audioClick.play()
+                isAudioPlay && audioClick.play()
             }}>+</button>
             </div>
             <div  className="button_get_armor">
@@ -36,7 +37,7 @@ import { ContainerActivType } from "../ContainerActivType/ContainerActivType";
             <button onClick={()=>{
                 dispatch({type:ContainerActivType.increase_performance_armor})
                 props.next_level()
-                audioClick.play()
+                isAudioPlay && audioClick.play()
             }}>+</button>
             </div>
         </div>

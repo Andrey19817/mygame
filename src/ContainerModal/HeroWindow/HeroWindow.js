@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useContext} from "react";
+import { MainContext } from "../../context";
 import './HeroWindow.css'
 
 
@@ -6,6 +7,7 @@ import './HeroWindow.css'
 export function HeroWindow({ avatar, value, return_image_selection }) {
     const audioClickAdress = require('../../audio/567421 (online-audio-converter.com).mp3')
     const audioClick = new Audio(audioClickAdress)
+    const {isAudioPlay} = useContext(MainContext)
 
     return (
         <>
@@ -16,7 +18,7 @@ export function HeroWindow({ avatar, value, return_image_selection }) {
                         borderImage: 'url(https://i.gifer.com/RRr2.gif)  1 '
                     }} src={avatar.src} onClick={() => {
                         return_image_selection()
-                        audioClick.play()
+                        isAudioPlay && audioClick.play()
                     }} />
 
                 </div>
