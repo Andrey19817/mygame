@@ -1,10 +1,8 @@
 .ContainerRegulations {
   position: absolute;
   width: 700px;
-  /* margin-left: auto; */
   text-align: center;
   padding: 10px;
-  /* height: 20vh; */
   box-shadow: 0 0 10px 2px black;
   margin-left: 5%;
   margin-top: 5%;
@@ -12,10 +10,12 @@
   z-index: 200;
 }
 li {
-  /* text-align: center; */
   width: 100%;
   list-style-type: none;
   color: rgb(0, 103, 102);
+}
+.regulations_p{
+  color: black;
 }
 .regulations_ul {
   text-align: center;
