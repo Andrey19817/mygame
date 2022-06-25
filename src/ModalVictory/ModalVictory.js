@@ -36,7 +36,7 @@ function ModalVictory(props) {
               setMyXp(getMyXp(10));
               setLevel(0);
               setMonstrArea(defaultMonstr);
-              setMonstrXp(getXp(3));
+              setMonstrXp(getXp(defaultMonstr.xp));
               seisBtn_20(true);
               setTreatment(true);
             }}
