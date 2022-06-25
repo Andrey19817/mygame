@@ -42,7 +42,7 @@ function ContainerModalDeath(props) {
             setDeath(false);
             setLevel(0);
             setMonstrArea(defaultMonstr);
-            setMonstrXp(getXp(3));
+            setMonstrXp(getXp(defaultMonstr.xp));
             seisBtn_20(true);
             setChange(true);
           }}
